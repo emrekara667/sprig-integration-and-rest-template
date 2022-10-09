@@ -19,11 +19,8 @@ public class RestTemplateConfig {
     }
 
     @Bean
-    public RestTemplate restTemplate(){
-
-
+    public RestTemplate restTemplate() {
         //return new RestTemplate();
-
         return new RestTemplateBuilder()
                 .errorHandler(restTemplateErrorHandler)
                 .build();
