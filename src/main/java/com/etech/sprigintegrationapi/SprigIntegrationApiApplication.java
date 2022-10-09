@@ -12,14 +12,6 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @EnableIntegration
 public class SprigIntegrationApiApplication implements CommandLineRunner {
-
-    private final RestTemplateErrorHandler restTemplateErrorHandler;
-
-    public SprigIntegrationApiApplication(RestTemplateErrorHandler restTemplateErrorHandler) {
-        this.restTemplateErrorHandler = restTemplateErrorHandler;
-    }
-
-
     public static void main(String[] args) {
         SpringApplication.run(SprigIntegrationApiApplication.class, args);
     }
@@ -27,12 +19,5 @@ public class SprigIntegrationApiApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-    }
-
-    @Bean
-    public RestTemplate restTemplate(){
-
-        //return new RestTemplate();
-        return new RestTemplateBuilder().errorHandler(restTemplateErrorHandler).build();
     }
 }
